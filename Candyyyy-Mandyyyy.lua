@@ -76,9 +76,9 @@ declineButton.Parent = dialogueFrame
 local gradient = Instance.new("UIGradient")
 gradient.Color = ColorSequence.new({
     ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 23)), -- Green at the start
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0)) -- Black towards the end
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(42, 0, 0)) -- Black towards the end
 })
-gradient.Rotation = 90
+gradient.Rotation = 34
 gradient.Parent = dialogueFrame
 
 local declineStroke = Instance.new("UIStroke")
