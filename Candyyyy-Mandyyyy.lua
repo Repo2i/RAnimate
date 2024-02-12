@@ -1,52 +1,44 @@
--- Initialize services and player GUI
 local TweenService = game:GetService("TweenService")
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Create the ScreenGui
 local siriGui = Instance.new("ScreenGui")
 siriGui.Parent = playerGui
 
--- Create a Frame for the simulated blur effect background
 local blurBackground = Instance.new("Frame")
 blurBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-blurBackground.BackgroundTransparency = 0.6 -- More transparency for a blur-like effect
+blurBackground.BackgroundTransparency = 0.6 
 blurBackground.Size = UDim2.new(1, 0, 1, 0)
 blurBackground.Parent = siriGui
 
--- Main Siri Dialogue Box with more precise positioning and sizing
 local dialogueFrame = Instance.new("Frame")
 dialogueFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 22) -- Slightly lighter for depth
 dialogueFrame.Size = UDim2.new(0, 600, 0, 340) -- Fixed size for consistency
 dialogueFrame.Position = UDim2.new(0.5, -300, 0.5, -170) -- Centered
 dialogueFrame.Parent = siriGui
 
--- Implement rounded corners with a larger radius for the dialogue box
 local dialogueCorner = Instance.new("UICorner")
 dialogueCorner.CornerRadius = UDim.new(0.1, 0) -- Increased radius for a softer look
 dialogueCorner.Parent = dialogueFrame
 
--- Siri Icon centered at the top inside the dialogue box
 local siriIcon = Instance.new("ImageLabel")
-siriIcon.Image = "rbxassetid://your_siri_icon_asset_id" -- Update with your asset
+siriIcon.Image = "rbxassetid://5497572149" -- Update with your asset
 siriIcon.Size = UDim2.new(0, 80, 0, 80)
 siriIcon.Position = UDim2.new(0.5, -40, 0.1, -40)
 siriIcon.BackgroundTransparency = 1
 siriIcon.Parent = dialogueFrame
 
--- Title Label for Siri with improved font and size for authenticity
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Text = "Orange Justice"
 titleLabel.Font = Enum.Font.GothamSemibold
-titleLabel.TextSize = 28 -- Slightly larger for emphasis
+titleLabel.TextSize = 28
 titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 titleLabel.BackgroundTransparency = 1
 titleLabel.Size = UDim2.new(1, 0, 0, 50)
 titleLabel.Position = UDim2.new(0, 0, 0, 50)
 titleLabel.Parent = dialogueFrame
 
--- Description Text for Siri with dynamic wrapping for longer texts
 local descriptionText = Instance.new("TextLabel")
-descriptionText.Text = "a special thank to a emper and her emper reanim"
+descriptionText.Text = "a special thank to a emper for help and her emper reanim"
 descriptionText.Font = Enum.Font.Gotham
 descriptionText.TextSize = 20
 descriptionText.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -56,7 +48,6 @@ descriptionText.Position = UDim2.new(0.05, 0, 0.25, 0)
 descriptionText.TextWrapped = true
 descriptionText.Parent = dialogueFrame
 
--- Enhanced 'Enable Siri' Button with animation for feedback
 local enableButton = Instance.new("TextButton")
 enableButton.Text = "launch the h0x"
 enableButton.Font = Enum.Font.GothamBold
@@ -67,12 +58,10 @@ enableButton.Size = UDim2.new(0, 200, 0, 50)
 enableButton.Position = UDim2.new(0.5, -220, 1, -60)
 enableButton.Parent = dialogueFrame
 
--- Implementing rounded corners for the 'Enable Siri' button
 local enableButtonCorner = Instance.new("UICorner")
 enableButtonCorner.CornerRadius = UDim.new(0.05, 0)
 enableButtonCorner.Parent = enableButton
 
--- 'Do Not Use Siri' Button for an alternative option, styled as text for simplicity
 local declineButton = Instance.new("TextButton")
 declineButton.Text = "no thanks"
 declineButton.Font = Enum.Font.Gotham
@@ -83,32 +72,28 @@ declineButton.Size = UDim2.new(0, 200, 0, 50)
 declineButton.Position = UDim2.new(0.5, 20, 1, -60)
 declineButton.Parent = dialogueFrame
 
--- Adding a UIStroke to 'Do Not Use Siri' for emphasis when hovered
 local declineStroke = Instance.new("UIStroke")
 declineStroke.Color = Color3.fromRGB(255, 255, 255)
 declineStroke.Transparency = 1 -- Initially invisible
 declineStroke.Parent = declineButton
 
--- Animations and Interactivity
--- Enable Siri Button Hover Effect
 enableButton.MouseEnter:Connect(function()
-    enableButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255) -- Lighter shade on hover
+    enableButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
 end)
 enableButton.MouseLeave:Connect(function()
-    enableButton.BackgroundColor3 = Color3.fromRGB(0, 122, 255) -- Original color
+    enableButton.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
 end)
 
--- Do Not Use Siri Button Hover Effect
 declineButton.MouseEnter:Connect(function()
-    declineButton.TextColor3 = Color3.fromRGB(200, 200, 200) -- Lighten text on hover
-    declineStroke.Transparency = 0 -- Make stroke visible
+    declineButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+    declineStroke.Transparency = 0 
 end)
 declineButton.MouseLeave:Connect(function()
-    declineButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- Original color
-    declineStroke.Transparency = 1 -- Hide stroke again
+    declineButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    declineStroke.Transparency = 1 
 end)
 
--- Button Click Events
+-- i stuck this line code like 2 minute
 enableButton.MouseButton1Click:Connect(function()
     -- Emperean Reanimation V2.2
 -- emperss#0, discord.gg/5PMtk6PJf5
@@ -1843,24 +1828,17 @@ LastTimeSetTotal = .1
  sick.Parent = Torso
          refit()
 end
---print(Anim.Keyframes[number]["HumanoidRootPart"]["Torso"]["Left Leg"].CFrame)
-    -- Additional functionality upon enabling Siri can be implemented here
-wait(0.9)
+wait(.9)
 siriGui:Destroy()
 end)
 
 declineButton.MouseButton1Click:Connect(function()
     print("Declined Siri")
-    siriGui:Destroy() -- Close the GUI
+    siriGui:Destroy()
 end)
 
--- Fade-in Animation for the Dialogue Frame
 TweenService:Create(
     dialogueFrame,
     TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
     {Position = UDim2.new(0.5, -300, 0.5, -170)}
 ):Play()
-
--- This script enhances the user experience by adding hover effects, clickable actions, and
--- improving the visual fidelity to more closely resemble the Siri interface on iPadOS within
--- the constraints of Roblox's UI capabilities.
