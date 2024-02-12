@@ -1828,7 +1828,7 @@ LastTimeSetTotal = .1
  sick.Parent = Torso
          refit()
 end
-wait(.9)
+wait(.2)
 siriGui:Destroy()
 end)
 
