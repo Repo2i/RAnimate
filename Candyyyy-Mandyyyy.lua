@@ -72,6 +72,15 @@ declineButton.Size = UDim2.new(0, 200, 0, 50)
 declineButton.Position = UDim2.new(0.5, 20, 1, -60)
 declineButton.Parent = dialogueFrame
 
+-- Create UIGradient
+local gradient = Instance.new("UIGradient")
+gradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 23)), -- Green at the start
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0)) -- Black towards the end
+})
+gradient.Rotation = 90
+gradient.Parent = dialogueFrame
+
 local declineStroke = Instance.new("UIStroke")
 declineStroke.Color = Color3.fromRGB(255, 255, 255)
 declineStroke.Transparency = 1 -- Initially invisible
