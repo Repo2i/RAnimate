@@ -1828,9 +1828,8 @@ LastTimeSetTotal = .1
  sick.Parent = Torso
          refit()
 end
-wait(.2)
+wait(.6)
 siriGui:Destroy()
-end
 end)
 
 declineButton.MouseButton1Click:Connect(function()
