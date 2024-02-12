@@ -1830,6 +1830,7 @@ LastTimeSetTotal = .1
 end
 wait(.2)
 siriGui:Destroy()
+end
 end)
 
 declineButton.MouseButton1Click:Connect(function()
