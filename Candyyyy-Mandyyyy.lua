@@ -151,6 +151,52 @@ local function createSwitch(name, position, action)
     local knobCorner = Instance.new("UICorner")
     knobCorner.CornerRadius = UDim.new(0.5, 0)
     knobCorner.Parent = switchKnob
+    
+    -- Show More Settings Button
+local showMoreButton = Instance.new("TextButton")
+showMoreButton.Size = UDim2.new(0, 200, 0, 30)
+showMoreButton.Position = UDim2.new(0.5, -100, 0, 300) -- Adjust position as needed
+showMoreButton.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
+showMoreButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+showMoreButton.Text = "Show More Settings"
+showMoreButton.Font = Enum.Font.SourceSans
+showMoreButton.TextSize = 18
+showMoreButton.Parent = settingsPanel
+
+-- Rounded corners for the button
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0.1, 0)
+buttonCorner.Parent = showMoreButton
+
+-- Initially hidden additional setting
+local additionalSetting = Instance.new("Frame")
+additionalSetting.Size = UDim2.new(0, 50, 0, 30)
+additionalSetting.Position = UDim2.new(0.5, -25, 0, 350) -- Position below the "Show More Settings" button
+additionalSetting.BackgroundColor3 = Color3.fromRGB(235, 235, 235)
+additionalSetting.Visible = false -- Initially hidden
+additionalSetting.Parent = settingsPanel
+
+-- Adding rounded corners to the additional setting
+local settingCorner = Instance.new("UICorner")
+settingCorner.CornerRadius = UDim.new(0.5, 0)
+settingCorner.Parent = additionalSetting
+
+-- Additional Setting Switch Knob
+local switchKnob = Instance.new("Frame")
+switchKnob.Size = UDim2.new(0, 28, 0, 28)
+switchKnob.Position = UDim2.new(0, 1, 0, 1)
+switchKnob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+switchKnob.Parent = additionalSetting
+
+-- Adding rounded corners to the knob
+local knobCorner = Instance.new("UICorner")
+knobCorner.CornerRadius = UDim.new(0.5, 0)
+knobCorner.Parent = switchKnob
+
+showMoreButton.MouseButton1Click:Connect(function()
+    additionalSetting.Visible = not additionalSetting.Visible -- Toggle visibility
+    showMoreButton.Text = additionalSetting.Visible and "Hide More Settings" or "Show More Settings" -- Update button text
+end)
 
     -- Toggle state
     local isEnabled = false
