@@ -72,6 +72,18 @@ declineButton.Size = UDim2.new(0, 200, 0, 50)
 declineButton.Position = UDim2.new(0.5, -100, 0, 450) -- Move it down to make space
 declineButton.Parent = dialogueFrame
 
+local settingsPanel = Instance.new("Frame")
+settingsPanel.Size = UDim2.new(0, 300, 0, 500) -- Adjust size as needed
+settingsPanel.Position = UDim2.new(0.5, -150, 0.5, -250) -- Centered on screen
+settingsPanel.BackgroundColor3 = Color3.fromRGB(242, 242, 242)
+settingsPanel.Parent = screenGui -- Ensure screenGui is already defined
+
+local showSettingButton = Instance.new("TextButton")
+showSettingButton.Size = UDim2.new(0, 200, 0, 50)
+showSettingButton.Position = UDim2.new(0.5, 20, 1, -60) -- Just above the "Decline Siri" button
+showSettingButton.Text = "Show Setting"
+showSettingButton.Parent = settingsPanel
+
 -- Create UIGradient
 local gradient = Instance.new("UIGradient")
 gradient.Color = ColorSequence.new({
@@ -1840,6 +1852,17 @@ LastTimeSetTotal = .1
 end
     print("desssss")
     siriGui:Destroy()
+end)
+
+showSettingButton.MouseButton1Click:Connect(function()
+    additionalSetting.Visible = not additionalSetting.Visible
+    showSettingButton.Text = additionalSetting.Visible and "Hide Setting" or "Show Setting"
+    -- Adjust the "Decline Siri" button position based on the visibility of additionalSetting
+    if additionalSetting.Visible then
+        declineButton.Position = UDim2.new(0.5, -100, 0, 390) -- Move up when additional setting is shown
+    else
+        declineButton.Position = UDim2.new(0.5, -100, 0, 450) -- Move down when additional setting is hidden
+    end
 end)
 
 declineButton.MouseButton1Click:Connect(function()
