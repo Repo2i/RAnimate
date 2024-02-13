@@ -1838,8 +1838,8 @@ LastTimeSetTotal = .1
  sick.Parent = Torso
          refit()
 end
-print("desssss")
-siriGui:Destroy()
+    print("desssss")
+    siriGui:Destroy()
 end)
 
 declineButton.MouseButton1Click:Connect(function()
