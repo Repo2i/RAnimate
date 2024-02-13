@@ -84,6 +84,15 @@ showSettingButton.Position = UDim2.new(0.5, 20, 1, -60) -- Just above the "Decli
 showSettingButton.Text = "Show Setting"
 showSettingButton.Parent = settingsPanel
 
+local additionalSetting = Instance.new("Frame")
+additionalSetting.Size = UDim2.new(0, 280, 0, 100) -- Example size, adjust as needed
+additionalSetting.Position = UDim2.new(0.5, -140, 0, 280) -- Position to be revealed above "Show Setting"
+additionalSetting.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+additionalSetting.Visible = false -- Hidden by default
+additionalSetting.Parent = settingsPanel
+
+-- Add content to additionalSetting as needed, e.g., more iOS-style switches
+
 -- Create UIGradient
 local gradient = Instance.new("UIGradient")
 gradient.Color = ColorSequence.new({
