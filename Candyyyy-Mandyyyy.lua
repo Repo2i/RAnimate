@@ -102,6 +102,50 @@ declineButton.MouseLeave:Connect(function()
     declineStroke.Transparency = 1 
 end)
 
+local function createToggle(name, position, action)
+    local toggleContainer = Instance.new("Frame")
+    toggleContainer.Name = name .. "ToggleContainer"
+    toggleContainer.Size = UDim2.new(0, 50, 0, 25) -- Size of the toggle
+    toggleContainer.Position = position
+    toggleContainer.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- Off state color
+    toggleContainer.Parent = dialogueFrame
+
+    local toggle = Instance.new("Frame")
+    toggle.Name = name .. "Toggle"
+    toggle.Size = UDim2.new(0, 23, 0, 23) -- Slightly smaller than the container for padding
+    toggle.Position = UDim2.new(0, 1, 0, 1) -- Start in the 'Off' position
+    toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Toggle color
+    toggle.Parent = toggleContainer
+
+    -- Adding rounded corners to mimic iOS style
+    local containerCorner = Instance.new("UICorner")
+    containerCorner.CornerRadius = UDim.new(0.5, 0) -- Fully rounded
+    containerCorner.Parent = toggleContainer
+
+    local toggleCorner = Instance.new("UICorner")
+    toggleCorner.CornerRadius = UDim.new(0.5, 0) -- Fully rounded
+    toggleCorner.Parent = toggle
+
+    local label = Instance.new("TextLabel")
+    label.Name = name .. "Label"
+    label.Size = UDim2.new(0, 200, 0, 25) -- Adjust width as needed
+    label.Position = UDim2.new(0, -200, 0, 0) -- Position to the left of the toggle
+    label.Text = name
+    label.TextColor3 = Color3.fromRGB(0, 0, 0)
+    label.BackgroundTransparency = 1
+    label.Parent = toggleContainer
+
+    -- Toggle state
+    local isEnabled = false
+
+    toggleContainer.MouseButton1Click:Connect(function()
+        isEnabled = not isEnabled
+        toggle:TweenPosition(isEnabled and UDim2.new(0, 26, 0, 1) or UDim2.new(0, 1, 0, 1), "Out", "Quart", 0.3, true)
+        toggleContainer.BackgroundColor3 = isEnabled and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
+        action(isEnabled)
+    end)
+end
+
 -- i stuck this line code like 2 minute
 enableButton.MouseButton1Click:Connect(function()
     -- Emperean Reanimation V2.2
