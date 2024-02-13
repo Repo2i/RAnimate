@@ -102,6 +102,32 @@ declineButton.MouseLeave:Connect(function()
     declineStroke.Transparency = 1 
 end)
 
+-- Create the ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create the settings panel
+local settingsPanel = Instance.new("Frame")
+settingsPanel.Size = UDim2.new(0, 300, 0, 400)
+settingsPanel.Position = UDim2.new(0.5, -150, 0.5, -200) -- Centered on the screen
+settingsPanel.BackgroundColor3 = Color3.fromRGB(242, 242, 242)
+settingsPanel.Parent = screenGui
+
+-- Add a title to the settings panel
+local panelTitle = Instance.new("TextLabel")
+panelTitle.Size = UDim2.new(1, 0, 0, 50)
+panelTitle.BackgroundTransparency = 1
+panelTitle.Text = "Settings"
+panelTitle.Font = Enum.Font.SourceSans
+panelTitle.TextSize = 24
+panelTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
+panelTitle.Parent = settingsPanel
+
+-- Adding rounded corners to the settings panel
+local panelCorner = Instance.new("UICorner")
+panelCorner.CornerRadius = UDim.new(0, 12)
+panelCorner.Parent = settingsPanel
+
 local function createSwitch(name, position, action)
     local switchContainer = Instance.new("Frame")
     switchContainer.Name = name .. "SwitchContainer"
