@@ -69,7 +69,7 @@ declineButton.TextSize = 18
 declineButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 declineButton.BackgroundTransparency = 1 -- Transparent to mimic a text link
 declineButton.Size = UDim2.new(0, 200, 0, 50)
-declineButton.Position = UDim2.new(0.5, 20, 1, -60)
+declineButton.Position = UDim2.new(0.5, -100, 0, 380) -- Move it down to make space
 declineButton.Parent = dialogueFrame
 
 -- Create UIGradient
@@ -192,6 +192,22 @@ switchKnob.Parent = additionalSetting
 local knobCorner = Instance.new("UICorner")
 knobCorner.CornerRadius = UDim.new(0.5, 0)
 knobCorner.Parent = switchKnob
+
+-- Show More Settings Button
+local showMoreButton = Instance.new("TextButton")
+showMoreButton.Size = UDim2.new(0, 200, 0, 30)
+showMoreButton.Position = UDim2.new(0.5, -100, 0, 250) -- Positioned above "Decline Siri"
+showMoreButton.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
+showMoreButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+showMoreButton.Text = "Show More Settings"
+showMoreButton.Font = Enum.Font.SourceSans
+showMoreButton.TextSize = 18
+showMoreButton.Parent = settingsPanel
+
+-- Rounded corners for the button
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0.1, 0)
+buttonCorner.Parent = showMoreButton
 
 showMoreButton.MouseButton1Click:Connect(function()
     additionalSetting.Visible = not additionalSetting.Visible -- Toggle visibility
