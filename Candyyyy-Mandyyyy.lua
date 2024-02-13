@@ -69,7 +69,7 @@ declineButton.TextSize = 18
 declineButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 declineButton.BackgroundTransparency = 1 -- Transparent to mimic a text link
 declineButton.Size = UDim2.new(0, 200, 0, 50)
-declineButton.Position = UDim2.new(0.5, 20, 1, -60) -- Move it down to make space
+declineButton.Position = UDim2.new(0.5, -100, 0, -450) -- Move it down to make space
 declineButton.Parent = dialogueFrame
 
 -- Create UIGradient
