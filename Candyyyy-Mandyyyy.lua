@@ -194,7 +194,7 @@ local Table = Emperean.Start({
 		TeleportRandom = true
 	},
 	R15 = false,
-	Fling = true,
+	Fling = false,
 	DisableScripts = false,
 	DisableGUIs = false,
 })
