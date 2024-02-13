@@ -76,7 +76,7 @@ local settingsPanel = Instance.new("Frame")
 settingsPanel.Size = UDim2.new(0, 300, 0, 500) -- Adjust size as needed
 settingsPanel.Position = UDim2.new(0.5, -150, 0.5, -250) -- Centered on screen
 settingsPanel.BackgroundColor3 = Color3.fromRGB(242, 242, 242)
-settingsPanel.Parent = screenGui -- Ensure screenGui is already defined
+settingsPanel.Parent = SiriGui -- Ensure screenGui is already defined
 
 local showSettingButton = Instance.new("TextButton")
 showSettingButton.Size = UDim2.new(0, 200, 0, 50)
