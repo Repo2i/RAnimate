@@ -102,48 +102,47 @@ declineButton.MouseLeave:Connect(function()
     declineStroke.Transparency = 1 
 end)
 
-local function createToggle(name, position, action)
-    local toggleContainer = Instance.new("Frame")
-    toggleContainer.Name = name .. "ToggleContainer"
-    toggleContainer.Size = UDim2.new(0, 50, 0, 25) -- Size of the toggle
-    toggleContainer.Position = position
-    toggleContainer.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- Off state color
-    toggleContainer.Parent = dialogueFrame
+local function createSwitch(name, position, action)
+    local switchContainer = Instance.new("Frame")
+    switchContainer.Name = name .. "SwitchContainer"
+    switchContainer.Size = UDim2.new(0, 50, 0, 30) -- Size of the switch background
+    switchContainer.Position = position
+    switchContainer.BackgroundColor3 = Color3.fromRGB(235, 235, 235) -- Off state color
+    switchContainer.Parent = siriGui -- Assuming siriGui is your ScreenGui element
 
-    local toggle = Instance.new("Frame")
-    toggle.Name = name .. "Toggle"
-    toggle.Size = UDim2.new(0, 23, 0, 23) -- Slightly smaller than the container for padding
-    toggle.Position = UDim2.new(0, 1, 0, 1) -- Start in the 'Off' position
-    toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Toggle color
-    toggle.Parent = toggleContainer
+    local switchKnob = Instance.new("Frame")
+    switchKnob.Name = name .. "SwitchKnob"
+    switchKnob.Size = UDim2.new(0, 28, 0, 28) -- Slightly smaller for the knob
+    switchKnob.Position = UDim2.new(0, 1, 0, 1) -- Padding to look like it's inside the container
+    switchKnob.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Knob color
+    switchKnob.Parent = switchContainer
 
-    -- Adding rounded corners to mimic iOS style
+    -- Adding rounded corners to both the container and the knob
     local containerCorner = Instance.new("UICorner")
-    containerCorner.CornerRadius = UDim.new(0.5, 0) -- Fully rounded
-    containerCorner.Parent = toggleContainer
+    containerCorner.CornerRadius = UDim.new(0.5, 0)
+    containerCorner.Parent = switchContainer
 
-    local toggleCorner = Instance.new("UICorner")
-    toggleCorner.CornerRadius = UDim.new(0.5, 0) -- Fully rounded
-    toggleCorner.Parent = toggle
-
-    local label = Instance.new("TextLabel")
-    label.Name = name .. "Label"
-    label.Size = UDim2.new(0, 200, 0, 25) -- Adjust width as needed
-    label.Position = UDim2.new(0, -200, 0, 0) -- Position to the left of the toggle
-    label.Text = name
-    label.TextColor3 = Color3.fromRGB(0, 0, 0)
-    label.BackgroundTransparency = 1
-    label.Parent = toggleContainer
+    local knobCorner = Instance.new("UICorner")
+    knobCorner.CornerRadius = UDim.new(0.5, 0)
+    knobCorner.Parent = switchKnob
 
     -- Toggle state
     local isEnabled = false
 
-    toggleContainer.MouseButton1Click:Connect(function()
-        isEnabled = not isEnabled
-        toggle:TweenPosition(isEnabled and UDim2.new(0, 26, 0, 1) or UDim2.new(0, 1, 0, 1), "Out", "Quart", 0.3, true)
-        toggleContainer.BackgroundColor3 = isEnabled and Color3.fromRGB(52, 199, 89) or Color3.fromRGB(200, 200, 200)
+    -- Function to update the switch's appearance and call the action callback
+    local function updateSwitch()
+        switchKnob:TweenPosition(isEnabled and UDim2.new(0.5, -14, 0.5, -14) or UDim2.new(0, 1, 0.5, -14), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.25, true)
+        switchContainer.BackgroundColor3 = isEnabled and Color3.fromRGB(10, 132, 255) or Color3.fromRGB(235, 235, 235)
         action(isEnabled)
+    end
+
+    switchContainer.MouseButton1Click:Connect(function()
+        isEnabled = not isEnabled
+        updateSwitch()
     end)
+
+    -- Initial update to set the correct position based on the default state
+    updateSwitch()
 end
 
 -- i stuck this line code like 2 minute
