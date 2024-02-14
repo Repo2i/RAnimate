@@ -1,7 +1,4 @@
 
-local CFrame = CFrame
-local CFrameAngles = CFrame.Angles
-local CFrameidentity = CFrame.identity
 
 local TweenService = game:GetService("TweenService")
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
