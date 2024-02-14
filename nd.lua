@@ -130,9 +130,7 @@ enableButton.MouseButton1Click:Connect(function()
     -- Emperean Reanimation V2.2
 -- emperss#0, discord.gg/5PMtk6PJf5
 
-local CFrame = CFrame
-local CFrameAngles = CFrame.Angles
-local CFrameidentity = CFrame.identity
+
 
 local Emperean = loadstring(game:HttpGet("https://raw.githubusercontent.com/Empereans/EmpereanReanimate/main/Versions/ERV2.2.lua"))()
 
@@ -195,7 +193,7 @@ local Table = Emperean.Start({
 		TeleportRandom = true
 	},
 	R15 = false,
-	Fling = false,
+	Fling = true,
 	DisableScripts = false,
 	DisableGUIs = false,
 })
