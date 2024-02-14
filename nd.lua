@@ -1,4 +1,8 @@
 
+local CFrame = CFrame
+local CFrameAngles = CFrame.Angles
+local CFrameidentity = CFrame.identity
+
 local TweenService = game:GetService("TweenService")
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
@@ -134,9 +138,6 @@ enableButton.MouseButton1Click:Connect(function()
 
 local Emperean = loadstring(game:HttpGet("https://raw.githubusercontent.com/Empereans/EmpereanReanimate/main/Versions/ERV2.2.lua"))()
 
-local CFrame = CFrame
-local CFrameAngles = CFrame.Angles
-local CFrameidentity = CFrame.identity
 
 local Table = Emperean.Start({
 	Accessories = {
@@ -1579,3 +1580,9 @@ end
     print("desssss")
     siriGui:Destroy()
 end)
+
+declineButton.MouseButton1Click:Connect(function()
+    print("Declined Siri")
+    siriGui:Destroy()
+end)
+
