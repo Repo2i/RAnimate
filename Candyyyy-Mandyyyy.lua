@@ -181,7 +181,7 @@ local Table = Emperean.Start({
 		Enabled = true,
 		ToolFling = true,
 		Timeout = 1.25,
-		Velocity = Vector3.new(0, 4096, 4096),
+		Velocity = Vector3new(0, 4096, 4096),
 		HighlightTargets = true
 	}
 })
