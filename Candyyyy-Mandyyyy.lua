@@ -193,7 +193,7 @@ local Fling = Table.Fling -- < this is a function
 local player = game.Players.LocalPlayer -- Get the local player
 local backpack = player:WaitForChild("Backpack") -- Get the player's backpack
 
-local function reEquipAllTools()
+local function req()
     for _, item in ipairs(backpack:GetChildren()) do
         if item:IsA("Tool") then
             player.Character.Humanoid:EquipTool(item)
@@ -202,7 +202,7 @@ local function reEquipAllTools()
     end
 end
 
-reEquipAllTools()
+req()
 
 print("animated by p00tp0t, converted and fixed by 123jl123")
 warn("refit function (anti-death) and music added by adam222334II")
