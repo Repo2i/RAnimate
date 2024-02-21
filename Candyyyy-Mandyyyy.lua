@@ -181,7 +181,7 @@ local Table = Emperean.Start({
 		Enabled = true,
 		ToolFling = true,
 		Timeout = 1.25,
-		Velocity = Vector3new(0, 4096, 4096),
+		Velocity = Vector3.new(0, 4096, 4096),
 		HighlightTargets = true
 	}
 })
@@ -195,7 +195,7 @@ local backpack = player:WaitForChild("Backpack") -- Get the player's backpack
 
 local function reEquipAllTools()
     for _, item in ipairs(backpack:GetChildren()) do
-        if item:IsA("Tool") then
+        if item:IsA("Boombox") then
             player.Character.Humanoid:EquipTool(item)
             wait(1) 
         end
