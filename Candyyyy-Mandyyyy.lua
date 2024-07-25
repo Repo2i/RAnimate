@@ -129,11 +129,7 @@ enableButton.MouseButton1Click:Connect(function()
     -- Emperean Reanimation V2.2
 -- emperss#0, discord.gg/5PMtk6PJf5
 
--- Emper Reanimation V2.3
--- emperss#0, discord.gg/5PMtk6PJf5
--- do you guys even know i add funny comments in every of my source ;-;
-
-local Emperean = loadstring(game:HttpGet("https://raw.githubusercontent.com/Empereans/EmpereanReanimate/main/Versions/ERV2.3.lua"))()
+-- Emper Reanimation V2.3
 
 -- let this stay here at the top ^^^
 
@@ -141,68 +137,6 @@ local CFrame = CFrame
 local CFrameAngles = CFrame.Angles
 local CFrameidentity = CFrame.identity
 
--- and you can put this down anywhere vvv (allegedly an arrow pointing down)
-
-local Table = Emperean.Start({
-	Accessories = {
-		{ Blacklist = true, Name = "Torso", AlternativeName = "UpperTorso", MeshId = "14413791480", TextureId = "14413794823", AllowAlternativeCFrame = false, CoordinateFrame = CFrameidentity, AlternativeCFrame = CFrameidentity },
-
-		{ Blacklist = true, Name = "Right Arm", AlternativeName = "RightLowerArm", MeshId = "12867814848", TextureId = "12794084950", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(0, 0, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Arm", AlternativeName = "LeftLowerArm", MeshId = "12867814848", TextureId = "12867874342", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(0, - 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Right Leg", AlternativeName = "RightLowerLeg", MeshId = "12867814848", TextureId = "12867873138", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(0, 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Leg", AlternativeName = "LeftLowerLeg", MeshId = "12867814848", TextureId = "12794082919", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(0, 0, 0), AlternativeCFrame = CFrameidentity },
-
-		{ Blacklist = true, Name = "Right Arm", AlternativeName = "RightLowerArm", MeshId = "12344206657", TextureId = "12344206675", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(- 2, 0, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Arm", AlternativeName = "LeftLowerArm", MeshId = "12344207333", TextureId = "12344207341", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(- 2, 0, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Right Leg", AlternativeName = "RightLowerLeg", MeshId = "11263221350", TextureId = "11263219250", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, - 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Leg", AlternativeName = "LeftLowerLeg", MeshId = "11159370334", TextureId = "11159284657", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, 1.57, 0), AlternativeCFrame = CFrameidentity },
-
-		{ Blacklist = true, Name = "Torso", AlternativeName = "UpperTorso", MeshId = "4819720316", TextureId = "4819722776", AllowAlternativeCFrame = false, CoordinateFrame = CFrameidentity, AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Right Arm", AlternativeName = "RightLowerArm", MeshId = "4324138105", TextureId = "4391374782", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Arm", AlternativeName = "LeftLowerArm", MeshId = "4154474745", TextureId = "4154474807", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Right Leg", AlternativeName = "RightLowerLeg", MeshId = "4094864753", TextureId = "4094881938", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, 1.57, 0), AlternativeCFrame = CFrameidentity },
-		{ Blacklist = true, Name = "Left Leg", AlternativeName = "LeftLowerLeg", MeshId = "4489232754", TextureId = "4489233876", AllowAlternativeCFrame = false, CoordinateFrame = CFrameAngles(1.57, 1.57, 0), AlternativeCFrame = CFrameidentity },
-	},
-	Rig = {
-		Transparency = 1,
-		R15 = false,
-		SetHumanoidDescription = true,
-		SetCharacter = false
-	},
-	Teleport = {
-		XandZoffset = 16,
-		Yoffset = 0
-	},
-	Disable = {
-		Scripts = false,
-		ScreenGUIs = true
-	},
-	Fling = {
-		Enabled = true,
-		ToolFling = true,
-		Timeout = 1.25,
-		Velocity = Vector3new(3339, 4096, 4096),
-		HighlightTargets = true
-	}
-})
-
-local Rig = Table.Rig
-local Options = Table.Options
-local Fling = Table.Fling -- < this is a function
-
-local player = game.Players.LocalPlayer -- Get the local player
-local backpack = player:WaitForChild("Backpack") -- Get the player's backpack
-
-local function req()
-    for _, item in ipairs(backpack:GetChildren()) do
-        if item:IsA("Tool") then
-            player.Character.Humanoid:EquipTool(item)
-            wait(1) 
-        end
-    end
-end
-
-req()
 
 print("animated by p00tp0t, converted and fixed by 123jl123")
 warn("refit function (anti-death) and music added by adam222334II")
