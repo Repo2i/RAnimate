@@ -1,0 +1,51 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/KadeTheExploiter/Uncategorized-Scripts/main/UI-Libraries/Reaver/UI.lua"))()
+local Main = Library:Create("moggers hub V0.1(beta)", "im tired of genesis fe scripts.(sorry rqz)")
+
+local HomeTab = Main:MakeTab("Home")
+local ScriptsTab = Main:MakeTab("Scripts")
+
+
+ScriptsTab:MakeButton("fe chara lc(hemi reanim)'", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20chara%20lc.lua"))()
+end)
+
+ScriptsTab:MakeButton("fe usc(krypton reanim)credit to epiconsiter for helping", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20usc%20credit%20to%20epiconister"))()
+end)
+
+ScriptsTab:MakeButton("fe gale fighter (hemi reanim)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20gale%20Fighter"))()
+end)
+
+ScriptsTab:MakeButton("HotLine Rifle originally converted by melon", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20Hotline%20Rifle%20thanks%20to%20melon"))()
+end)
+
+ScriptsTab:MakeButton("Fe commander that originally convert by melon but i reconverted it", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20commander%20originally%20convert%20by%20melonscriper"))()
+end)
+
+--https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20commander%20originally%20convert%20by%20melonscriper
+-- reconvert from melon
+-- https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20Hotline%20Rifle%20thanks%20to%20melon
+
+HomeTab:MakeButton("Welcome to the moggers hub!", function()
+    print("i miss myworld")
+end)
+
+HomeTab:MakeButton("This Hub will be open sourced always", function()
+    print("i miss myworld")
+end)
+
+HomeTab:MakeButton("Usc and Fe chara lc need a specific hat", function()
+    print("b")
+end)
+
+HomeTab:MakeButton("which i will provide in future", function()
+    print("a")
+end)
+
+
+
+
+--https://raw.githubusercontent.com/Repo2i/RAnimate/main/Fe%20usc%20credit%20to%20epiconister
