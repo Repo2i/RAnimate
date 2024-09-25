@@ -115,22 +115,6 @@ s2.EmitterSize = 30
 local s2c=s2:Clone()
 
 
-local c = game.Players.LocalPlayer.Character
-local accessory = c:FindFirstChild("WaistHat")
-local info = KadeAPI.GetHatInformation(accessory)
-
-local offset = CFrame.new(-1,-4,-3) * CFrame.Angles(math.rad(0),math.rad(-90),math.rad(0))
-KadeAPI.SetHatAlign(info, LeftArm, offset)
-
-local c = game.Players.LocalPlayer.Character
-
-local accessory = c:FindFirstChild("WaistHatRed")
-local info = KadeAPI.GetHatInformation(accessory)
-
-local offset = CFrame.new(1,-4,-3) * CFrame.Angles(math.rad(0),math.rad(-70),math.rad(0))
-KadeAPI.SetHatAlign(info, RightArm, offset)
-
-
 local crying = "http://www.roblox.com/asset/?id=1452402780"
 local s3=it("Sound",Head)
 
